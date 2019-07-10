@@ -1,6 +1,50 @@
 # Unreleased
+-
+ None
 
+# 3.8.8
+
+## Added
+- Rate limiter configuration to respect `X-Forwarded-For` and `X-Real-IP` headers
+
+## Changed
+- Rate limiter plugin now ignores `X-Forwarded-For` and `X-Real-IP` headers by default
+
+# 3.8.7
+
+## Added
+
+- Url parameters can be used in the target definition. Thanks to @Serjick
+- Request-ID to error handler logs
+- Additional attributes to tracing spans
+
+## Changed
+
+- Log writer initialized earlier
+- Use in-memory repository for basic auth plugin when Mongo is not available
+- Use `gofrs/uuid` instead of `satori/go.uuid`
+- Rate limiter respects `X-Forwarded-For` and `X-Real-IP` HTTP headers
+
+## Fixed
+
+- Circuit breaker plugin statsd collector prefix
+ 
+# 3.8.6
+
+## Updated
+
+- `http_server_request_latency` to include HTTP method key
+
+# 3.8.5
+
+## Fixed
 - Fixed plugin configuration not being validated
+
+## Updated
+- Added stats and tracing support with opencensus
+
+## Removed
+- Tracing support via opentracing.io
 
 # 3.8.4
 
